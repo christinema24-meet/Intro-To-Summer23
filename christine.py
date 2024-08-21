@@ -12,7 +12,19 @@ def dislike (youtube_video):
 		video["dislikes"] +=1
 	return youtube_video
 
-def add_comment(youtubevideo, username, comment_text):
-	
+def add_comment(youtube_video, username, comment_text):
+    youtube_video['comments'] = {}
+    youtube_video['comments'][username] = comment_text
+    return youtube_video
+
+
+video = create_youtube_video("how to tie your shoes ", "A tutorial about how to tie your shoes in easy way,just in 5 sec!")
+
+for _ in range(495):
+   video = like(video)
+   video = dislike(video)
+   video = add_comment(video, "user123", "Great tutorial!")
+print(video)
+
 
 
