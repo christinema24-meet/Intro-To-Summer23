@@ -1,7 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>my first lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Animal</title>
+    <style>
+        body {
+            background-color: lightblue; 
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #main-heading {
+            font-size: 36px;
+            color: darkcyan; 
+            border-bottom: 3px solid darkcyan; 
+            padding-bottom: 10px;
+        }
+
+        .info-link {
+            color: teal; 
+            text-decoration: none;
+        }
+
+        .color-option {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
 <h1> hi,how are you </h1>
@@ -15,7 +40,22 @@
 <label for="css">blue</label><br>
 <input type="radio" id="pink" name="fav_language" value="pink">
 <label for="javascript">pink</label>
+    <h1 id="main-heading">All About Dolphins</h1>
+    <h2>The Smartest Marine Mammal</h2>
+    <p>Dolphins are fascinating creatures known for their intelligence and playful behavior. They are found in oceans around the world and have a complex social structure.</p>
+    <img src="https://www.bornfree.org.uk/wp-content/uploads/2023/09/bottlenose-dolphin-iStock.jpg" alt="Dolphin" width="400px">
+    <br>
+    <a href="https://en.wikipedia.org/wiki/Dolphin" class="info-link">Learn more about dolphins on Wikipedia</a>
+    <br><br>
+
+    <button onclick="changeBackgroundColor('pink')">Change BG Color</button> 
+    
+    <script src="main.js"></script>
 </body>
+</html>
+
+
+
 
 
 
