@@ -23,7 +23,7 @@ video = create_youtube_video("how to tie your shoes ", "A tutorial about how to 
 for _ in range(495):
    video = like(video)
    video = dislike(video)
-   video = add_comment(video, "user123", "Great tutorial!")
+   video = add_comment(video, "roon_9090", "wow that was really healpful it was the first time for me to tie my shoes!")
 print(video)
 
 
