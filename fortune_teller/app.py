@@ -1,16 +1,23 @@
-from flask import Flask,render_template
+from flask import Flask,render_template, request, url_for, redirect
 import random
+
 app = Flask(__name__,
 template_folder='templates',
 static_folder='static')
 
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
-    return render_template("home.html")
+    if request.method == 'GET':
+        return render_template('home.html')
+    else:
+        birthday = request.form['bmonth']
+
+        return redirect(url_for('fortune',
+            b =birthday))
 
 
-@app.route('/fortune')
-def fortune():
+@app.route('/fortune', methods=['GET', 'POST'])
+def fortune(b):
     fortune = [
     "You will find great success today.",
     "An exciting opportunity is on the horizon.",
@@ -24,8 +31,12 @@ def fortune():
     "A positive change is coming your way.",
     "you will die",
     " you will marry dima"]
-    selected_fortune = random.choice(fortune)
+    selected_fortune = random.choice(fortunes)
     return render_template("fortune.html", fortune=selected_fortune)
+    fortune_final=future[len_b]
+    return render_template("fortune.html",f=fortune_final)
+
+
 
 
 
