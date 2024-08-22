@@ -15,9 +15,8 @@ def home():
         return redirect(url_for('fortune',
             b =birthday))
 
-
 @app.route('/fortune', methods=['GET', 'POST'])
-def fortune(b):
+def fortune():
     fortune = [
     "You will find great success today.",
     "An exciting opportunity is on the horizon.",
@@ -31,10 +30,11 @@ def fortune(b):
     "A positive change is coming your way.",
     "you will die",
     " you will marry dima"]
-    selected_fortune = random.choice(fortunes)
+    selected_fortune = random.choice(fortune)
     return render_template("fortune.html", fortune=selected_fortune)
-    fortune_final=future[len_b]
-    return render_template("fortune.html",f=fortune_final)
+
+
+
 
 
 
