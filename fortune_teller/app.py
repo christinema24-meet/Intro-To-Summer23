@@ -13,10 +13,10 @@ def home():
         birthday = request.form['bmonth']
 
         return redirect(url_for('fortune',
-            b =birthday))
+            b = birthday))
 
-@app.route('/fortune', methods=['GET', 'POST'])
-def fortune():
+@app.route('/fortune/<string:b>', methods=['GET', 'POST'])
+def fortune(b):
     fortune = [
     "You will find great success today.",
     "An exciting opportunity is on the horizon.",
@@ -31,8 +31,12 @@ def fortune():
     "you will die",
     " you will marry dima"]
     selected_fortune = random.choice(fortune)
-    return render_template("fortune.html", fortune=selected_fortune)
-
+    if 3<= len(b) <=9:
+        return render_template("fortune.html", fortune=fortune[len(b)-1])
+    else:
+        return render_template("home.html")
+    return render_template("fortune.html", fortune=fortune[len(b)-1])
+   
 
 
 
